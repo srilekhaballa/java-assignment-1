@@ -3,6 +3,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import java.util.List;
+
 @Service
 public class EmployeeService {
 	@Autowired
@@ -23,7 +24,7 @@ public class EmployeeService {
         }
         return null;
     }
-    public Employee getEmployeeById(long empid) {
+    public Employee getEmployeeById(int empid) {
         try {
             return dao.load(empid);
         } catch (DataAccessException e) {
@@ -31,7 +32,7 @@ public class EmployeeService {
         }
         return null;
     }
-    public void deleteEmployee(long empid) {
+    public void deleteEmployee(int empid) {
         try {
             dao.delete(empid);
         } catch (DataAccessException e) {
@@ -63,4 +64,4 @@ public class EmployeeService {
 	
 	
 
-}
+
