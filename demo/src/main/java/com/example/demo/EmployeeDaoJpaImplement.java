@@ -22,9 +22,9 @@ public class EmployeeDaoJpaImplement implements Dao<Employee> {
     }
 
     @Override
-    public Employee load(int empid) {
+    public Employee load(int id) {
         EntityManager em = emf.createEntityManager();
-        Employee employee = em.find(Employee.class, empid);
+        Employee employee = em.find(Employee.class, id);
         em.close();
         return employee;
     }
@@ -32,7 +32,7 @@ public class EmployeeDaoJpaImplement implements Dao<Employee> {
     @Override
     public void delete(int empid) {
         EntityManager em = emf.createEntityManager();
-        Employee employee = em.find(Employee.class, empid);
+        Employee employee = em.find(Employee.class, id);
 
         em.getTransaction().begin();
         em.remove(employee);
