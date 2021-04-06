@@ -24,17 +24,17 @@ public class EmployeeService {
         }
         return null;
     }
-    public Employee getEmployeeById(int empid) {
+    public Employee getEmployeeById(int id) {
         try {
-            return dao.load(empid);
+            return dao.load(id);
         } catch (DataAccessException e) {
             e.printStackTrace();
         }
         return null;
     }
-    public void deleteEmployee(int empid) {
+    public void deleteEmployee(int id) {
         try {
-            dao.delete(empid);
+            dao.delete(id);
         } catch (DataAccessException e) {
             e.printStackTrace();
         }
