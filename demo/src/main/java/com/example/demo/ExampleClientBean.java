@@ -11,19 +11,20 @@ public class ExampleClientBean {
 	EmployeeService employeeService;
 	
 	public void run() {
+		
 		Employee employee=Employee.create(11,"Rajesh","rajesh123@gmail.com",8796543234,"Srilekha",14-03-2021);
 		employeeService.saveEmployee(employee);
 		
-		employee=Employee.create(12,"Mahesh","mahesh123@gmail.com",9766543237,"Srilekha","14-03-2021");
+		employee=Employee.create(12,"Mahesh","mahesh123@gmail.com",9766543237,"Srilekha",14-03-2021);
 		employeeService.saveEmployee(employee);
 		
 		List<Employee> allEmployees= employeeService.getAllEmployees();
 		System.out.println("Employees loaded :" + allEmployees);
 		
 		employee = employeeService.getEmployeeById(2);
-		System.out.println("employee loaded by id:" + employee);
+		System.out.println("Employee loaded by id:" + employee);
 		
-		System.out.println("updating employee email with id emp2");
+		System.out.println("Updating employee email with id emp2");
 		employee.setEmail("ravi@gmail.com");
 		employeeService.updateEmployee(employee);
 		
@@ -31,11 +32,8 @@ public class ExampleClientBean {
 		employeeService.deleteEmployee(1);
 		
 		allEmployees = employeeService.getAllEmployees();
-        System.out.println("Employees loaded: " + allEmployees);
+        	System.out.println("Employees loaded: " + allEmployees);
 		
-		
-		
-		
-	}
+		}
 
 }
